@@ -33,10 +33,6 @@ export function normalizeOptions(args: CliOptions): BuildOptions {
 
   function processTargets(platform: Platform, types: Array<string>) {
     function commonArch(currentIfNotSpecified: boolean): Array<Arch> {
-      if (platform === Platform.MAC) {
-        return args.x64 || currentIfNotSpecified ? [Arch.x64] : []
-      }
-
       const result = Array<Arch>()
       if (args.x64) {
         result.push(Arch.x64)
